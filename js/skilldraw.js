@@ -1,3 +1,5 @@
+// This is an example comment
+
 function saveDrawing (drawingName) {
   var drawJSON = JSON.stringify(canvas.toJSON());
   localStorage.setItem(drawingName, drawJSON);
