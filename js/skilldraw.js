@@ -1,4 +1,26 @@
 // This is an example comment
+var gallery = [];
+var sizeOfGallery;
+
+function setGallery(callback) {
+  sizeOfGallery = localStorage.getItem("sizeOfGallery");
+  if(sizeOfGallery==null || sizeOfGallery==undefined) { 
+    localStorage.setItem("sizeOfGallery", "0");
+    sizeOfGallery=0;
+  }
+  console.log('initialSize', sizeOfGallery);
+  callback(sizeOfGallery);
+}
+
+function populateGallery(gallerySize) {
+    gallerySize++;
+    var galleryImages = '';
+    for (i = 1; i < gallerySize; i++) { 
+      galleryImages += localStorage.getItem(i + "SVG") + "<br/>";
+    }
+    document.getElementById("gallery").innerHTML = galleryImages;
+}
+
 
 function saveDrawing (drawingName) {
   var drawJSON = JSON.stringify(canvas.toJSON());
@@ -7,21 +29,18 @@ function saveDrawing (drawingName) {
 }
 
 function displayDrawing (drawingName) {
-  var drawJSON = localStorage.getItem("free1");
+  var drawJSON = localStorage.getItem(drawingName);
   canvas.loadFromJSON(drawJSON, canvas.renderAll.bind(canvas), function(o, object) {
     fabric.log(o, object);
   });
 }
 
 function saveSVG (drawingName) {
+  console.log("SAVESVG", drawingName);
   var drawSVG = canvas.toSVG({suppressPreamble:true});
-  localStorage.setItem(drawingName + "SVG", drawSVG);
-  console.log("Saved SVG", localStorage.getItem(drawingName + "SVG"));
+  localStorage.setItem(drawingName, drawSVG);
+  console.log("Saved SVG", localStorage.getItem(drawingName));
 }
-
-var drawingName = "free1";
-
-document.getElementById("gallery").innerHTML = localStorage.getItem(drawingName + "SVG");
 
 
   var $ = function(id){return document.getElementById(id)};
@@ -195,3 +214,5 @@ document.getElementById("gallery").innerHTML = localStorage.getItem(drawingName 
     }
   });
 })();
+
+

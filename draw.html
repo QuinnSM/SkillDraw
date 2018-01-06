@@ -36,7 +36,7 @@
 						<div id="special-buttons">
 							<button id="clear-canvas" class="btn btn-info">Undo</button>
 				  			<button id="drawing-mode" class="btn btn-info">Edit Mode</button>
-				  			<button id="clear-canvas" class="btn btn-info">Save</button>
+				  			<button id="save-canvas" class="btn btn-info">Save</button>
 			  			</div>
 					</div>
 		  		</div>
@@ -46,6 +46,19 @@
 			<div id="gallery"></div>
 			<script id="main"></script>
 			<script src="js/skilldraw.js"></script>
+			<script>
+				// Event listeners
+				document.getElementById("save-canvas").addEventListener("click", function(){
+				    sizeOfGallery=parseInt(sizeOfGallery);
+				    sizeOfGallery++;
+				    localStorage.setItem("sizeOfGallery", sizeOfGallery);
+				    var drawingName = sizeOfGallery +"SVG";
+				    saveDrawing(sizeOfGallery);
+				    saveSVG (drawingName);
+				});
+
+				setGallery(populateGallery);
+			</script>
 		</div>
 	</body>
 </html>

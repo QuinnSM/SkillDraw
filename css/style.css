@@ -103,3 +103,8 @@ label {
 #bd-wrapper {
   /* min-width: 1500px; */
 }
+
+/* Gallery Styles */
+#gallery {text-align: center}
+#gallery svg {border:1px solid #000;margin:10px auto;}
+
