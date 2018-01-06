@@ -43,12 +43,12 @@ document.getElementById("gallery").innerHTML = localStorage.getItem(drawingName 
   drawingModeEl.onclick = function() {
     canvas.isDrawingMode = !canvas.isDrawingMode;
     if (canvas.isDrawingMode) {
-      drawingModeEl.innerHTML = 'Cancel drawing mode';
-      drawingOptionsEl.style.display = '';
+      drawingModeEl.innerHTML = 'Edit Mode';
+      //drawingOptionsEl.style.display = '';
     }
     else {
-      drawingModeEl.innerHTML = 'Enter drawing mode';
-      drawingOptionsEl.style.display = 'none';
+      drawingModeEl.innerHTML = 'Drawing Mode';
+      //drawingOptionsEl.style.display = 'none';
     }
   };
 
