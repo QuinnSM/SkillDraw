@@ -1,0 +1,105 @@
+html{background-color: white;font-family: "Trebuchet MS", helvetica, sans-serif;}
+svg {height:300px;width:300px;}
+/* h1{color: #29ABE2; text-align: left; border-width: 0 0 1.5px 0;border-color: #F4870F;border-style: solid} 
+h1 span.formal{color:#325BCE;} */
+#wrapper {margin: auto;width:650px;}
+a, a:visited {color: #29ABE2;text-decoration: none}
+h2 span.formal{color: black; font-size: 40px}
+h2{color: black; font-size: 30px; text-align: center}
+div.subtitle{text-align: center;}
+img {max-width: 100%}
+
+
+/* Header & Navigation */
+div.nav {width:50%; }
+#navigation {font-size: 17px; text-align: right;}
+div.titleicon {text-align: left; float: left;}
+
+
+/* Buttoncards */
+
+a.buttoncard {text-align: center; font-size: 1.2em; display:block;}
+a.buttoncard1 {display: block; width: 280px; height: 300px; border:1px solid #555;margin: 10px 0; padding:5px; border-radius: 5px; float: left;}
+a.buttoncard1:active { background-color: yellow; }
+a.buttoncard2 {display: block; width: 280px; height: 300px; border:1px solid #555;margin: 10px 0; padding:5px; border-radius: 5px; float: right;}
+a.buttoncard2:active { background-color: yellow; }
+a.buttoncard3 {display: block; width: 280px; height: 300px; border:1px solid #555;margin: 10px 0; padding:5px; border-radius: 5px; float: left;}
+a.buttoncard3:active { background-color: yellow; }
+a.buttoncard4 {display: block; width: 280px; height: 300px; border:1px solid #555;margin: 10px 0; padding:5px; border-radius: 5px; float: right;}
+a.buttoncard4:active { background-color: yellow; }
+a.buttoncard5 {display: block; width: 280px; height: 300px; border:1px solid #555;margin: 10px 0; padding:5px; border-radius: 5px; float: left;}
+a.buttoncard5:active { background-color: yellow; }
+a span.lesson-card-title {text-decoration: none; color:#333333;}
+.cardtitle {margin:30px 0;text-align:center;}
+
+.progress {float:left;display: block;width:30px; margin-right:7px;}
+.progressmeter {width:150px;margin-left:60px;}
+.buttonimage {height:145px;}
+
+
+/* Gamification */
+#score{font-style: italic;font-size:1.2em;}
+
+div.clear {clear:both;}
+
+
+/* Buttons */
+
+a.button2{font-size: 1.2em; display:block;border-width: 0 0 1px 0;border-color: #c6c6c6;border-style: solid; margin: 10px 0; padding:5px; }
+a.button2:active {background-color: yellow; }
+a.button3{display: block; border:1px solid #555;margin: 10px 0; padding:5px; border-radius: 5px; background-color: #f9993e}
+a.button3:active {background-color: #baf259; }
+.illustration {text-align: center}
+div.archive{text-align:center;}
+h2.drawtitle{max-width: 100%;}
+
+#exercises {margin: 30px 0;}
+div.name{font-size: 30px; }
+
+
+
+/* Drawing Canvas Styles */
+#canvasFrame {text-align: center; background-color: #ffffff}
+#drawing-mode {
+  margin-bottom: 10px;
+  vertical-align: top;
+}
+#drawing-mode-options {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background: #ffffff;
+  padding: 10px;
+  float:left;
+  width:350px;
+}
+#drawing-mode-select {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background: #ffffff;
+  padding: 10px;
+  float:right;
+  width:250px;  
+}
+#special-buttons {
+  float:right;
+  width:280px;
+}
+#drawing-buttons button {
+  border: 2px solid #29ABE2; padding:5px; color: #29ABE2; font-size: 1em;
+}
+
+label {
+  display: inline-block; width: 130px;
+}
+.info {
+  display: inline-block;
+  width: 25px;
+  background: #ffc;
+}
+#bd-wrapper {
+  /* min-width: 1500px; */
+}
