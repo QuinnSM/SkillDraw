@@ -2,6 +2,11 @@
 var gallery = [];
 var exerciseStatus = [];
 var sizeOfGallery;
+var exerciseNames = ['Lesson 1, Exercise A', 'Lesson 1, Exercise B', 'Lesson 1, Exercise C', 'Lesson 1, Exercise D',
+'Lesson 2, Exercise A', 'Lesson 2, Exercise B', 'Lesson 2, Exercise C', 'Lesson 2, Exercise D',
+'Lesson 3, Exercise A', 'Lesson 3, Exercise B', 'Lesson 3, Exercise C', 'Lesson 3, Exercise D',
+'Lesson 4, Exercise A', 'Lesson 4, Exercise B', 'Lesson 4, Exercise C', 'Lesson 4, Exercise D',
+'Lesson 5, Exercise A', 'Lesson 5, Exercise B', 'Lesson 5, Exercise C', 'Lesson 5, Exercise D', "Free Draw"]
 
 function setExerciseStatus(callback) {
   exerciseStatus = JSON.parse(localStorage.getItem("exerciseStatus"));
@@ -38,13 +43,49 @@ function populateGallery(gallerySize) {
     gallerySize++;
     var galleryImages = '';
     for (i = 1; i < gallerySize; i++) { 
-      galleryImages += localStorage.getItem(i + "SVG") + "<br/>";
+      galleryImages += exerciseNames[localStorage.getItem(i + "EXE")] + "<br/>" + localStorage.getItem(i + "SVG") ;
     }
-    document.getElementById("gallery").innerHTML = galleryImages;
+    if (document.getElementById('gallerySize') !== null) {
+      document.getElementById("gallerySize").innerHTML = sizeOfGallery;
+    }
+    if (document.getElementById('gallery') !== null) {
+      document.getElementById("gallery").innerHTML = galleryImages;
+    }
 }
 
+function exerciseName(num) {
+    switch(num) {
+      case 0:
+        exName = "";
+      case 1:
+        exName = "";       
+      case 2:
+        exName = ""; 
+      case 3:
+        exName = ""; 
+      case 4:
+        exName = ""; 
+      case 5:
+        exName = ""; 
+      case 6:
+        exName = ""; 
+      case 7:
+        exName = ""; 
+      case 8:
+        exName = ""; 
+      case 9:
+        exName = ""; 
+      case 10:
+        exName = ""; 
+      case 11:
+        exName = ""; 
+
+    }
+}
 
 function saveDrawing (drawingName) {
+  exerName = drawingName + "EXE";
+  localStorage.setItem(exerName, exercise);
   var drawJSON = JSON.stringify(canvas.toJSON());
   localStorage.setItem(drawingName, drawJSON);
 }
