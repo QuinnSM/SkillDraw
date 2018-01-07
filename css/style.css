@@ -43,8 +43,11 @@ a span.lesson-card-title {text-decoration: none; color:#333333;}
 div.clear {clear:both;}
 
 
+#freeDraw {text-align:center; margin-top: 15px}
+
 /* Buttons */
 
+a.button{font-size: 18px; color: #29ABE2; text-align: center; width:100px; border-width: 1px; border-color: #29ABE2;border-style: solid; margin: 5px 0; padding:5px; border-radius: 7px}
 a.button2{font-size: 1.2em; display:block;border-width: 0 0 1px 0;border-color: #c6c6c6;border-style: solid; margin: 10px 0; padding:5px; }
 a.button2:active {background-color: yellow; }
 a.button3{display: block; border:1px solid #555;margin: 10px 0; padding:5px; border-radius: 5px; background-color: #f9993e}

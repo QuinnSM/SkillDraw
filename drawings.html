@@ -4,27 +4,29 @@
 	<title>
 		SkillDraw: How to become a drawing pro
 	</title>
-	<script src="js/fabric.min.js"></script>
 </head>
 <body>
-	<h1><span class="formal">Skill</span>Draw</h1>
+
+<div class="titleicon">
+	<img src="images/Logo.svg" width="90%"> 
+</div> 
+<div id="navigation">
+	<a href="index.html">Lessons | </a>
+	<a href="drawings.html">Gallery</a>
+</div>
+<div id="Gallery Title" class="clear">
+	<h2>Joeben's Gallery</h2>
+</div>
 <div id="score">
-	<div class="archive">Drawings: 12</div>
-	
+	<div class="archive">Drawings: <span id="gallerySize"></span></div>
 </div>
 <div class="clear"></div>
-
-<div id="free draw">
+<div id="freeDraw">
 	<a href="draw.html" class="button">Free Draw</a>
-</div>
-<div id="Navigation">
-	<a href="index.html" class="nav lessons">Lessons</a>
-	<a href="drawings.html" class="nav drawings">Drawings</a>
 </div>
 
 <div id="gallery"></div>	
 <script src="js/utilities.js"></script>
-<script src="js/skilldraw.js"></script>
 
 <script>
 	setGallery(populateGallery);
