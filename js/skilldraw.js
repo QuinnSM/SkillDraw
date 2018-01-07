@@ -4,6 +4,18 @@
     isDrawingMode: true
   });
 
+    // save initial state
+  save();
+
+  canvas.on("object:added", function (e) {
+    save();
+  })
+
+  // undo and redo buttons
+  document.getElementById("undo").addEventListener("click", function(){
+    replay(undo, redo, '#redo', this);
+  });
+
   fabric.Object.prototype.transparentCorners = false;
 
   var drawingModeEl = $('drawing-mode'),
@@ -172,26 +184,18 @@
 
 
 ////// UNDO/REDO SCRIPT https://stackoverflow.com/questions/19043219/undo-redo-feature-in-fabric-js
-         // Fabric.js Canvas object
-        var canvas;
-         // current unsaved state
         var state;
-         // past states
         var undo = [];
-         // reverted states
         var redo = [];
 
-        /**
-         * Push the current state into the undo stack and then capture the current state
-         */
         function save() {
+          console.log("saved");
           // clear the redo stack
-          redo = [];
-          $('#redo').prop('disabled', true);
+          //$('#redo').prop('disabled', true);
           // initial call won't have a state
           if (state) {
             undo.push(state);
-            $('#undo').prop('disabled', false);
+            //$('#undo').prop('disabled', false);
           }
           state = JSON.stringify(canvas);
         }
@@ -207,51 +211,19 @@
         function replay(playStack, saveStack, buttonsOn, buttonsOff) {
           saveStack.push(state);
           state = playStack.pop();
-          var on = $(buttonsOn);
-          var off = $(buttonsOff);
+          //var on = $(buttonsOn);
+          //var off = $(buttonsOff);
           // turn both buttons off for the moment to prevent rapid clicking
-          on.prop('disabled', true);
-          off.prop('disabled', true);
+          //on.prop('disabled', true);
+          //off.prop('disabled', true);
           canvas.clear();
           canvas.loadFromJSON(state, function() {
+            console.log(state)
             canvas.renderAll();
             // now turn the buttons back on if applicable
-            on.prop('disabled', false);
-            if (playStack.length) {
-              off.prop('disabled', false);
-            }
+            //on.prop('disabled', false);
+            //if (playStack.length) {
+            //  off.prop('disabled', false);
+            //}
           });
         }
-
-        $(function() {
-          ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          // Set up the canvas
-          canvas = new fabric.Canvas('canvas');
-          canvas.setWidth(500);
-          canvas.setHeight(500);
-          // save initial state
-          save();
-          // register event listener for user's actions
-          canvas.on('object:modified', function() {
-            save();
-          });
-          // draw button
-          $('#draw').click(function() {
-            var imgObj = new fabric.Circle({
-              fill: '#' + Math.floor(Math.random() * 16777215).toString(16),
-              radius: Math.random() * 250,
-              left: Math.random() * 250,
-              top: Math.random() * 250
-            });
-            canvas.add(imgObj);
-            canvas.renderAll();
-            save();
-          });
-          // undo and redo buttons
-          $('#undo').click(function() {
-            replay(undo, redo, '#redo', this);
-          });
-          $('#redo').click(function() {
-            replay(redo, undo, '#undo', this);
-          })
-        });
