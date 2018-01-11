@@ -3,6 +3,7 @@
   <link rel="stylesheet" href="css/style.css">
     <title> SkillDraw: Drawing</title>
     <script src="js/fabric.min.js"></script>
+<script src="js/jscolor.min.js"></script>
 </head>
 <body>
   <div class="titleicon">
@@ -21,14 +22,15 @@
           <div id="description" class="clear">
             <p>Draw another self portrait but this time focus on geometric structure. Instead of drawing a detailed outline, only draw basic geometric shapes within the face (circles, rectangle, triangles). <p>
           </div>  
-        <div id="canvasFrame" style="margin:auto;width:650px;">
-          <canvas id="c" width="650" height="550" style="border:20px solid #eef8fc; "></canvas>
+        <div id="canvasFrame" style="margin:auto;width:650px;border:20px solid #eeeeee"> 
+          <canvas id="c" width="650" height="550" style=""></canvas>
         </div>
 
         <div style="width:650px;margin:30px auto">
-            <div id="drawing-mode-options">
-              <label for="drawing-line-width">Line width:</label> <span class="info">0</span><input type="range" value="0" min="0" max="150" id="drawing-line-width"> <input type="color" value="#000000" id="drawing-color">
-            </div>
+			  		<div id="drawing-mode-options">
+			    		<label for="drawing-line-width">Line width:</label> <span class="info">3</span><input type="range" value="3" min="0" max="150" id="drawing-line-width"> 
+			    		<input class="jscolor {onFineChange:'update(this)'}" value="#555555" id="drawing-color" style="width:50px;height:20px;font-size:0; ">
+			  		</div>
             <div id="drawing-mode-select">
               <label for="drawing-mode-selector">Brush Style:</label>
               <select id="drawing-mode-selector">
@@ -38,13 +40,13 @@
             </div>
 
             <div id="drawing-buttons" class="clear">
-            <button id="clear-canvas" class="btn btn-info">Clear Drawing</button>
-            <div id="special-buttons">
-              <button id="clear-canvas" class="btn btn-info">Undo</button>
-                <button id="drawing-mode" class="btn btn-info">Edit Mode</button>
-                <button id="save-canvas" class="btn btn-info">Save</button>
+              <button id="clear-canvas" class="btn btn-info">Clear Drawing</button>
+              <div id="special-buttons">
+                  <button id="undo" class="btn btn-info">Undo</button>
+                  <button id="drawing-mode" class="btn btn-info">Edit Mode</button>
+                  <button id="save-canvas" class="btn btn-info">Save</button>
               </div>
-          </div>
+            </div>
           </div>
 
 
@@ -52,10 +54,10 @@
       <script src="js/utilities.js"></script>
       <script src="js/skilldraw.js"></script>
       <script>
+        var exercise=9; // UPDATE THIS!!!!!
         setExerciseStatus(updateStatusMarkers);
         // Event listeners
         document.getElementById("save-canvas").addEventListener("click", function(){
-            var exercise=9; // UPDATE THIS!!!!!
             markComplete(exercise);
             sizeOfGallery=parseInt(sizeOfGallery);
             sizeOfGallery++;

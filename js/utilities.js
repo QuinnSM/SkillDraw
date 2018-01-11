@@ -43,13 +43,13 @@ function populateGallery(gallerySize) {
     gallerySize++;
     var galleryImages = '';
     for (i = 1; i < gallerySize; i++) { 
-      galleryImages += "<div class='galleryitem'>" + "Drawing " + i + " " + exerciseNames[localStorage.getItem(i + "EXE")] + "<br/>" + localStorage.getItem(i + "SVG") + "</div>";
+      galleryImages += "<div class='galleryitem'><b>Drawing " + i + ": </b>" + exerciseNames[localStorage.getItem(i + "EXE")] + "<br/>" + localStorage.getItem(i + "SVG") + "</div>" ;
     }
     if (document.getElementById('gallerySize') !== null) {
       document.getElementById("gallerySize").innerHTML = sizeOfGallery;
     }
     if (document.getElementById('gallery') !== null) {
-      document.getElementById("gallery").innerHTML = galleryImages + "<div class='clear'></div>";
+      document.getElementById("gallery").innerHTML = galleryImages;
     }
 }
 
@@ -107,4 +107,10 @@ function markComplete (exercise) {
     exerciseArray[exercise]=1;
     localStorage.setItem("exerciseStatus",JSON.stringify(exerciseArray));
     exerciseStatus = exerciseArray;
+
+function update(jscolor) {
+      // 'jscolor' instance can be used as a string
+      console.log(document.getElementById('drawing-color').value);
+      document.getElementById('drawing-color').value = '#' + jscolor
+  }
 }

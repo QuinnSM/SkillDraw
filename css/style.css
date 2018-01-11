@@ -109,6 +109,6 @@ label {
 }
 
 /* Gallery Styles */
-#gallery {text-align: center; width: 670px; border:1px solid #000000; margin: auto;}
+#gallery {text-align: center; width: 670px; margin: auto;}
 #gallery svg {border:1px solid #000;margin:10px auto;}
 
