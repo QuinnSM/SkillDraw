@@ -43,13 +43,13 @@ function populateGallery(gallerySize) {
     gallerySize++;
     var galleryImages = '';
     for (i = 1; i < gallerySize; i++) { 
-      galleryImages += exerciseNames[localStorage.getItem(i + "EXE")] + "<br/>" + localStorage.getItem(i + "SVG") ;
+      galleryImages += "<div class='galleryitem'>" + "Drawing " + i + " " + exerciseNames[localStorage.getItem(i + "EXE")] + "<br/>" + localStorage.getItem(i + "SVG") + "</div>";
     }
     if (document.getElementById('gallerySize') !== null) {
       document.getElementById("gallerySize").innerHTML = sizeOfGallery;
     }
     if (document.getElementById('gallery') !== null) {
-      document.getElementById("gallery").innerHTML = galleryImages;
+      document.getElementById("gallery").innerHTML = galleryImages + "<div class='clear'></div>";
     }
 }
 

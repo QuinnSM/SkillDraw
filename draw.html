@@ -10,7 +10,7 @@
 		</div> 
 		<div id="navigation">
 			<a href="index.html">Lessons | </a>
-			<a href="drawings.html">Drawings</a>
+			<a href="drawings.html">Gallery</a>
 		</div>
 		<div class="clear" >
 		    <div class="drawtitle" id="bd-wrapper" ng-controller="CanvasControls">
@@ -34,7 +34,7 @@
 			  		<div id="drawing-buttons" class="clear">
 						<button id="clear-canvas" class="btn btn-info">Clear Drawing</button>
 						<div id="special-buttons">
-							<button id="undo" class="btn btn-info">Undo</button>
+							<button id="clear-canvas" class="btn btn-info">Undo</button>
 				  			<button id="drawing-mode" class="btn btn-info">Edit Mode</button>
 				  			<button id="save-canvas" class="btn btn-info">Save</button>
 			  			</div>
@@ -43,12 +43,11 @@
 
 
 
-			<div id="gallery"></div>
+
 			<script id="main"></script>
 			<script src="js/utilities.js"></script>
 			<script src="js/skilldraw.js"></script>
 			<script>
-			    var exercise=20; // UPDATE THIS!!!!!
 				// Event listeners
 				document.getElementById("save-canvas").addEventListener("click", function(){
 				    sizeOfGallery=parseInt(sizeOfGallery);

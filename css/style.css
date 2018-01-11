@@ -59,7 +59,8 @@ h2.drawtitle{max-width: 100%;}
 #exercises {margin: 30px 0;}
 div.name{font-size: 30px; }
 
-
+/* Gallery */
+.galleryitem{float:left; margin-left: 15px; margin-right: 15px;}
 
 /* Drawing Canvas Styles */
 #canvasFrame {text-align: center; background-color: #ffffff}
@@ -108,6 +109,6 @@ label {
 }
 
 /* Gallery Styles */
-#gallery {text-align: center}
+#gallery {text-align: center; width: 670px; border:1px solid #000000; margin: auto;}
 #gallery svg {border:1px solid #000;margin:10px auto;}
 
